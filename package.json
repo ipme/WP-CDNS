@@ -1,0 +1,16 @@
+{
+  "name": "@ipme/wp-cnds",
+  "version": "0.0.1",
+  "description": "WordPress CDN static assets for begin, kratos theme",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ipme/WP-CDNS.git"
+  },
+  "author": "ipme",
+  "license": "MIT",
+  "files": [
+    "begin/",
+    "kratos/"
+  ]
+}
