@@ -10,21 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write   # OIDC必填
+      id-token: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v5
         with:
           node-version: 22
-          registry-url: https://registry.npmjs.org/
+          # 删掉 registry-url 这一行！！
 
-      # ✅ 升级npm到满足OIDC要求版本
-      - name: Upgrade npm
-        run: npm install -g npm@^11.5.1
+      - name: Update npm
+        run: npm install -g npm@11.5.1
 
-      - name: Publish package
+      - name: Publish
         run: npm publish --access public --provenance
 
